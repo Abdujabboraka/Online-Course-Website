@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>online course</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'homepage' %}">Courses</a></li>
+            <li><a href="{% url 'students' %}">Students</a></li>
+            <li><a href="{% url 'enroll' %}">enroll</a></li>
+
+        </ul>
+        <div class="mobile-menu-icon">
+            <i class="fas fa-bars"></i> <!-- FontAwesome icon for the mobile menu -->
+        </div>
+    </div>
+</nav>
+
+<body class="body">
+
+<div class="courses-menu">
+    {% for course in courses %}
+    <div class="course">
+        <div class="name">
+            <h1 align="center">{{ course.name }}</h1>
+        </div>
+        <p>{{ course.description|truncatewords:25 }}</p>
+        <p>{{ course.start_date }}</p>
+
+        <div class="take">
+
+            <div class="davomiyligi">
+                <h2 align="left"> Davomiyligi: {{ course.duration }} oy</h2>
+                <h2 align="left"> Instructor: {{ course.instructor }}</h2>
+            </div>
+
+            <div class="button">
+                <p align="right"><a href="{% url 'course-detail' course.id %}" ><button>Take</button></a></p>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Company Info -->
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Online Courses Hub is your go-to platform for learning new skills, advancing your career, and exploring knowledge. With expert instructors and a wide range of courses, we make education accessible for everyone.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Education St, Learning City, USA</p>
+            <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            <p><i class="fas fa-envelope"></i> support@onlinecourses.com</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2024 Online Courses Hub | Designed by Your Company
+    </div>
+</footer>
+
+
+<script>
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>

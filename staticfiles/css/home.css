@@ -1,0 +1,674 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #0D1B2A;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo Styling */
+.logo {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Nav Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #F5CB5C; /* Gold color on hover */
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-icon i {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #0D1B2A;
+        flex-direction: column;
+        align-items: start;
+        padding: 20px;
+        display: none;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+    }
+
+    .nav-links li {
+        margin-bottom: 20px;
+    }
+
+    .nav-links.show {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon i {
+        color: #ffffff;
+        font-size: 24px;
+    }
+}
+
+/* Smooth Transition for Menu */
+.nav-links.show {
+    transform: translateX(0);
+}
+
+
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+
+/* Courses Menu Layout */
+.courses-menu {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Course Card Styling */
+.course {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Information */
+.course h1 {
+    font-size: 22px;
+    color: #F5CB5C;
+
+    transition: color 0.3s ease;
+}
+
+.name {
+background-color: #0D1B2A;
+width: 95%;
+border-radius: 10px;
+padding: 10px;}
+
+.course p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.course h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Button */
+.course-button {
+    background-color: #F5CB5C;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.course-button:hover {
+    background-color: #f0a500;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+    .course {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .course {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .course-button {
+        font-size: 12px;
+    }
+}
+.take {
+    width: 100%;
+    display: flex;}
+
+.davomiyligi {
+    width: 60%;}
+
+.button {
+    width: 40%; }
+
+
+/* Button */
+
+/* Button Container */
+.button {
+    text-align: right;
+    margin: 20px;
+}
+
+
+/* Button Styling */
+.button a button {
+    background-color: #0D1B2A; /* Dark blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button a button:hover {
+    background-color: #F5CB5C; /* Gold background on hover */
+    color: #0D1B2A; /* Dark blue text on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .button {
+        text-align: center; /* Center the button on mobile */
+    }
+
+    .button a button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .button a button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: #0D1B2A;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #F5CB5C;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #adb5bd;
+}
+
+.footer-section a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #F5CB5C;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #adb5bd;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #F5CB5C;
+}
+
+.footer-bottom {
+    background-color: #1B263B;
+    padding: 10px 0;
+    color: #adb5bd;
+    font-size: 13px;
+    border-top: 1px solid #adb5bd;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .courses-menu > div {
+        width: calc(50% - 20px);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .courses-menu > div {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+/* Course Box Styling */
+.course-box {
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid #e0e0e0; /* Light border for subtlety */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* Margin between boxes */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.course-box:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Course Title Styling */
+.course-box h1 {
+    font-size: 1.5em; /* Larger font size for title */
+    color: #0D1B2A; /* Dark blue color for title */
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+/* Description Styling */
+.course-box .description {
+    font-size: 1em; /* Regular font size for description */
+    color: #555; /* Dark gray color for description text */
+    margin-bottom: 15px; /* Spacing below description */
+}
+
+/* Details Section Styling */
+.course-box .details {
+    display: flex;
+    justify-content: space-between; /* Space between duration and price */
+    margin-bottom: 20px; /* Spacing below details */
+}
+
+.course-box .details .duration,
+.course-box .details .price {
+    font-size: 0.9em; /* Slightly smaller font for details */
+    color: #777; /* Lighter gray color for details */
+}
+
+/* Enroll Button Styling */
+.enroll-button {
+    display: inline-block;
+    background-color: #F5CB5C; /* Gold background */
+    color: #0D1B2A; /* Dark blue text */
+    padding: 10px 20px; /* Padding around the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.enroll-button:hover {
+    background-color: #0D1B2A; /* Dark blue on hover */
+    color: #F5CB5C; /* Gold text on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .course-box {
+        margin: 15px; /* Reduce margin on smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .course-box h1 {
+        font-size: 1.25em; /* Smaller font size for title */
+    }
+
+    .course-box .description {
+        font-size: 0.9em; /* Smaller font size for description */
+    }
+
+    .course-box .details .duration,
+    .course-box .details .price {
+        font-size: 0.8em; /* Smaller font size for details */
+    }
+
+    .enroll-button {
+        padding: 8px 16px; /* Adjust button padding */
+    }
+}
+
+
+/* Enrollment Form Container */
+.enroll-now {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 90%; /* Max width for the form */
+    margin: 30px auto; /* Center the form with margins */
+    padding: 20px; /* Padding around the form */
+    text-align: center; /* Center align text */
+}
+
+/* Form Header Styling */
+.enroll-now h2 {
+    font-size: 1.8em; /* Title font size */
+    color: #0D1B2A; /* Dark blue color */
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+.enroll-now h4 {
+    font-size: 1.2em; /* Subtitle font size */
+    color: #555; /* Gray color for subtitle */
+    margin-bottom: 20px; /* Spacing below subtitle */
+}
+/* General form container */
+.enroll-now {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.enroll-now h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.enroll-now h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Form input fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2980B9;
+    outline: none;
+}
+
+/* Submit button */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1A5276;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .enroll-now {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .enroll-now h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+/* Student Cards Container */
+
+/* Student Cards Container */
+.students-container {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Wrap cards to the next line on smaller screens */
+    justify-content: space-around; /* Space out cards evenly */
+    margin: 20px; /* Margin around the container */
+}
+
+/* Student Card Styling */
+.student-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    margin: 15px; /* Margin between cards */
+    width: calc(30% - 30px); /* Width for three cards per row, accounting for margin */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Student Name Styling */
+.student-card h2 {
+    font-size: 1.5em; /* Title font size */
+    color: #2C3E50; /* Dark blue color */
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+/* Email and Registration Date Styling */
+.email, .registration-date {
+    font-size: 0.9em; /* Regular font size */
+    color: #34495E; /* Dark gray color */
+    margin: 5px 0; /* Vertical spacing */
+}
+
+/* Courses Section Styling */
+.student-courses {
+    margin-top: 15px; /* Spacing above courses section */
+}
+
+/* Course Styling */
+.st-course {
+    font-size: 0.85em; /* Slightly smaller font for courses */
+    color: #2980B9; /* Blue color for course names */
+    margin: 3px 0; /* Vertical spacing */
+}
+
+/* Toggle Button Styling */
+.toggle-button {
+    background-color: #2980B9; /* Button color */
+    color: #ffffff; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside button */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 15px; /* Margin above button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.toggle-button:hover {
+    background-color: #1A5276; /* Darker blue on hover */
+}
+
+/* Details Section */
+.details {
+    display: none; /* Hidden by default */
+    margin-top: 15px; /* Margin above details */
+    background-color: #f0f0f0; /* Light gray background for details */
+    padding: 15px; /* Padding inside details */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .student-card {
+        width: calc(45% - 30px); /* Two cards per row on smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .student-card {
+        width: 100%; /* Full width for cards on mobile */
+    }
+}

@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'homepage' %}">Courses</a></li>
+            <li><a href="{% url 'enroll' %}">enroll</a></li>
+
+        </ul>
+        <div class="mobile-menu-icon">
+            <i class="fas fa-bars"></i> <!-- FontAwesome icon for the mobile menu -->
+        </div>
+    </div>
+</nav>
+
+<body class="body">
+
+<div class="students-container">
+    {% for student in students %}
+    <div class="student-card">
+        <h2 class="student-name">{{ student.first_name }} {{ student.last_name }}</h2>
+
+
+        <button class="toggle-button">Show Details</button>
+        <div class="details">
+            <p class="email">Email: {{ student.email }}</p>
+            <p class="registration-date">Registration Date: {{ student.reg_date }}</p>
+             <div class="student-courses">
+            <h3>Courses</h3>
+            {% for course in student.courses.all %}
+            <p class="st-course">{{ course.name }}</p>
+            {% empty %}
+            <p>No courses enrolled</p>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Company Info -->
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Online Courses Hub is your go-to platform for learning new skills, advancing your career, and exploring knowledge. With expert instructors and a wide range of courses, we make education accessible for everyone.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Education St, Learning City, USA</p>
+            <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            <p><i class="fas fa-envelope"></i> support@onlinecourses.com</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2024 Online Courses Hub | Designed by Your Company
+    </div>
+</footer>
+
+
+<script>
+    document.querySelector('.mobile-menu-icon').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButtons = document.querySelectorAll('.toggle-button');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const details = this.nextElementSibling; // Get the next sibling element (details)
+            if (details.style.display === "block") {
+                details.style.display = "none"; // Collapse
+                this.textContent = "Show Details"; // Change button text
+            } else {
+                details.style.display = "block"; // Expand
+                this.textContent = "Hide Details"; // Change button text
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
